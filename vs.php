@@ -39,7 +39,13 @@ function _get_post_thumbnail($size = 'thumbnail', $class = 'thumb') {
             break;
         }
 
-	} else {
+	} else { //如果文章没有设置缩略图，则查找文章内是否包含图片
+        $content = $post->post_content;
+        preg_match_all('/<img.*?(?: |\\t|\\r|\\n)?src=[\'"]?(.+?)[\'"]?(?:(?: |\\t|\\r|\\n)+.*?)?>/sim', $content, $strResult, PREG_PATTERN_ORDER);
+        $n = count($strResult[1]);
+        if($n > 0){ // 如果文章内包含有图片，就用第一张图片做为缩略图
+            echo '<a href="'.get_permalink().'"><img src="'.$strResult[1][0].'" /></a>';
+        } else {
 		$html = sprintf('<img data-src="%s" class="%s">', get_stylesheet_directory_uri() . '/img/thumbnail.png', $class);
 	}
 
