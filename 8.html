@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="Keywords" content="blog"/>
+    <meta name="Description" content="blog"/>
+    <title>Rovun</title>
+    <link rel="shortcut icon" href="/static/favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+</head>
+<body>
+<div class="main">
+    <div class="header">
+    	<ul id="pages">
+            <li><a href="/">home</a></li>
+            <li><a href="/#/tags">tags</a></li>
+            <li><a href="/#/archive">archive</a></li>
+    	</ul>
+    </div>
+	<div class="wrap-header">
+	<h1>
+    <a href="/" id="title"></a>
+	</h1>
+	</div>
+	<div><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- GG -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:15px"
+     data-ad-client="ca-pub-7865735607740972"
+     data-ad-slot="1099566646"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<div id="md" style="display: none;">
+<!-- markdown -->
+我发现一种比以物易币更好的商业手法。
+按照现今社会，一种始终紧缺的产品比有使用周期的货物更有利润，利润是讲求货物流转率的，一旦流转率下降、供需渐趋稳定就进入微利时代，其中还包含进货成本、仓储空间、时间成本、管理成本等等之类，利润捉襟见肘，发展可见预期。
+新的商业世界，应为一种剔除上述半数以上弊端的商业手法，每个产品的生命周期较之更短、利润之高、运作之透明，都使上述无法望其项背，较之货物更纯粹，唯有知识产品，成本之于利润仅为办公场所、设备成本、人力成本（几乎可以忽略不计），利润却是百分百，那就是平面设计，客户遍布全球每个角落，产品几乎包括任何形式（素材、商标、海报、广告、商品、详情图），一般客户遇到售卖需要、宣传需要会想到亲手设计，但效果往往不尽如人意，潜在客户提不起兴趣点击浏览或给不了受众客户印象，这是最致命的痛点。为此，客户会寻求专业帮助，这就是难得的机遇，虽然门槛低、进入易，但接一单赚一单，亏的机率较少。
+法律、咨询、财会、编程，手法基本如是。商业，就是如此纯粹！
+<!-- markdown end -->
+</div>
+<div class="entry" id="main">
+         <div><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ros -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7865735607740972"
+     data-ad-slot="6390277841"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<!-- content -->
+<p>我发现一种比以物易币更好的商业手法。
+按照现今社会，一种始终紧缺的产品比有使用周期的货物更有利润，利润是讲求货物流转率的，一旦流转率下降、供需渐趋稳定就进入微利时代，其中还包含进货成本、仓储空间、时间成本、管理成本等等之类，利润捉襟见肘，发展可见预期。
+新的商业世界，应为一种剔除上述半数以上弊端的商业手法，每个产品的生命周期较之更短、利润之高、运作之透明，都使上述无法望其项背，较之货物更纯粹，唯有知识产品，成本之于利润仅为办公场所、设备成本、人力成本（几乎可以忽略不计），利润却是百分百，那就是平面设计，客户遍布全球每个角落，产品几乎包括任何形式（素材、商标、海报、广告、商品、详情图），一般客户遇到售卖需要、宣传需要会想到亲手设计，但效果往往不尽如人意，潜在客户提不起兴趣点击浏览或给不了受众客户印象，这是最致命的痛点。为此，客户会寻求专业帮助，这就是难得的机遇，虽然门槛低、进入易，但接一单赚一单，亏的机率较少。
+法律、咨询、财会、编程，手法基本如是。商业，就是如此纯粹！</p>
+<!-- content end -->
+</div>
+<br>
+<br>
+    <div id="disqus_thread"></div>
+	<div class="footer">
+		<p>© Copyright 2014 by rovun, Designed by rovun</p>
+	</div>
+</div>
+<script src="main.js"></script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ["\\(", "\\)"]], processEscapes: true}});
+</script>
+<script id="content" type="text/mustache">
+    <h1>{{title}}</h1>
+    <div class="tag">
+    {{date}}
+    {{#tags}}
+    <a href="/#/tag/{{name}}">#{{name}}</a>
+    {{/tags}}
+    </div>
+</script>
+<script id="pagesTemplate" type="text/mustache">
+    {{#pages}}
+    <li>
+        <a href="{{path}}">{{title}}</a>
+    </li>
+    {{/pages}}
+</script>
+<script>
+$(document).ready(function() {
+    $.ajax({
+        url: "main.json",
+        type: "GET",
+        dataType: "json",
+        success: function(data) {
+            $("#title").html(data.name);
+            var pagesTemplate = Hogan.compile($("#pagesTemplate").html());
+            var pagesHtml = pagesTemplate.render({"pages": data.pages});
+            $("#pages").append(pagesHtml);
+            //path
+            var path = "8.html";
+            //path end
+            var now = 0;
+            for (var i = 0; i < data.posts.length; ++i)
+                if (path == data.posts[i].path)
+                    now = i;
+            var post = data.posts[now];
+            var tmp = post.tags.split(" ");
+            var tags = [];
+            for (var i = 0; i < tmp.length; ++i)
+                if (tmp[i].length > 0)
+                    tags.push({"name": tmp[i]});
+            var contentTemplate = Hogan.compile($("#content").html());
+            var contentHtml = contentTemplate.render({"title": post.title, "tags": tags, "date": post.date});
+            $("#main").prepend(contentHtml);
+            if (data.disqus_shortname.length > 0) {
+                var disqus_shortname = data.disqus_shortname;
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            }
+        }
+    });
+});
+</script>
+</body>
+</html>
